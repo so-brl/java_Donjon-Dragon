@@ -1,9 +1,13 @@
 package com.campusnum;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import com.campusnum.ennemi.Ennemi;
+import com.campusnum.ennemi.Sorcier;
+import com.campusnum.plateau.Plateau;
+
+import java.io.OutputStream;
+import java.security.KeyStore;
+import java.util.*;
 
 /**
  * Class Principal
@@ -15,8 +19,11 @@ public class Main {
         menu.welcome();
         menu.startGame();
 
+
 //        String[] choices = new String[]{"azerty","qsdfgh"};
 //        System.out.println(choices[0]);
 //        choices[0] = "test";
+
     }
+
 }

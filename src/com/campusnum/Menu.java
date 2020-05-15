@@ -4,6 +4,7 @@ import com.campusnum.equipements.*;
 import com.campusnum.personnages.Guerrier;
 import com.campusnum.personnages.Magicien;
 import com.campusnum.personnages.Personnage;
+import com.campusnum.plateau.Plateau;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -328,7 +329,10 @@ public class Menu {
      * Une fois les personnages validés , la partie commence
      */
     public void playing() {
-        System.out.println("La partie va commencer");
+        System.out.println("La partie va commencer \n\n\"Le plateau de jeux : \\n\\n\"+");
+        Plateau plateau = new Plateau();
+        plateau.creatPlateau();
+        plateau.affichePlateau();
     }
 
     /**
@@ -338,8 +342,6 @@ public class Menu {
         System.out.println("------------------------------- \nVous avez quitté la partie, à bientôt:)\n-------------------------------");
         System.exit(0);
     }
-
-
 }
 
 
