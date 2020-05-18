@@ -1,19 +1,51 @@
 package com.campusnum.plateau;
 
+import com.campusnum.ennemi.Dragon;
 import com.campusnum.ennemi.Ennemi;
+import com.campusnum.ennemi.Gobelin;
+import com.campusnum.ennemi.Sorcier;
 
+import java.util.Arrays;
 import java.util.Random;
 
-public class CaseEnnemi extends OptionCasePlateau {
-    Random random = new Random();
-    private String[] ennemi = new String[]{"Gobelin", "Dragon", "Sorcier"};
-    int nbrEnnemi = ennemi.length;
-    private Random aleatoire = random.nextInt(0, nbrEnnemi);
+public class CaseEnnemi extends Case {
 
-    String typeEnnemi= ennemi[aleatoire];
+    private String[] typesEnnemi = new String[]{"Gobelin", "Dragon", "Sorcier"};
+    private Ennemi ennemi;
 
-    public CaseEnnemi(typeEnnemi) {
-        Ennemi CaseEnnemi = new Ennemi(random) {
+    public CaseEnnemi(){
+        ennemi=generateEnnemi();
+    }
+
+    public Ennemi generateEnnemi() {
+        Random random = new Random();
+        int nbrEnnemi = typesEnnemi.length;
+        int aleatoire = random.nextInt(nbrEnnemi);
+
+        String typeEnnemi= typesEnnemi[aleatoire];
+        switch (aleatoire){
+            case 0:
+                Gobelin CaseEnnemiGobelin = new Gobelin(typeEnnemi);
+                return CaseEnnemiGobelin ;
+
+            case 1:
+                Dragon CaseEnnemiDragon = new Dragon(typeEnnemi);
+                return CaseEnnemiDragon;
+
+            case 2:
+                Sorcier CaseEnnemiSorcier = new Sorcier(typeEnnemi);
+                return CaseEnnemiSorcier;
+
+            default:
+                System.out.println("bug");
+                return null;
         }
+
+
+    }
+
+    @Override
+    public String toString() {
+        return "** Case Ennemi ** " + ennemi ;
     }
 }

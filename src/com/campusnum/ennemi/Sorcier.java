@@ -15,24 +15,10 @@ public class Sorcier extends Ennemi {
     /**
      * Création d'un sorcier
      */
-    public Sorcier() {
-        this.type = "Sorcier";
-        this.vie = 9;
-        this.puissance = 2;
+    public Sorcier(String typeEnnemi) {
+        super(typeEnnemi, 2, 9);
     }
 
-
-    /**
-     * Description du Sorcier
-     * @return la liste des caractéristiques du Sorcier
-     */
-    @Override //pris en compte en priorité
-    public String toString() {
-        return "- Type = Sorcier \n" +
-                "- Niveau de vie = " + vie + "\n" +
-                "- Puissance d'attaque = " + puissance + "\n"
-                ;
-    }
 
 
 }

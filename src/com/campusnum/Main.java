@@ -15,10 +15,12 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        Menu menu = new Menu();
-        menu.welcome();
-        menu.startGame();
-
+//        Menu menu = new Menu();
+//        menu.welcome();
+//        menu.startGame();
+        Plateau plateau = new Plateau();
+        plateau.createPlateau();
+        plateau.affichePlateau();
 
 //        String[] choices = new String[]{"azerty","qsdfgh"};
 //        System.out.println(choices[0]);

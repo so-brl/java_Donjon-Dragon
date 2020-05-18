@@ -331,7 +331,7 @@ public class Menu {
     public void playing() {
         System.out.println("La partie va commencer \n\n\"Le plateau de jeux : \\n\\n\"+");
         Plateau plateau = new Plateau();
-        plateau.creatPlateau();
+        plateau.createPlateau();
         plateau.affichePlateau();
     }
 

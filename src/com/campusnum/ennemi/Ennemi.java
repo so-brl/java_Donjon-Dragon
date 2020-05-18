@@ -1,16 +1,17 @@
 package com.campusnum.ennemi;
 
-public abstract class Ennemi {
+public  abstract class Ennemi {
     protected String type ;
     protected int vie;
     protected int puissance;
 
     /**
      * Création de l'Ennemi
-
      */
-    public Ennemi(String type) {
+    public Ennemi(String type, int puissance, int vie) {
         this.type = type;
+        this.puissance = puissance;
+        this.vie = vie;
 
     }
 
@@ -51,14 +52,15 @@ public abstract class Ennemi {
     }
 
     /**
-     * Description du Ennemi
-     * @return
+     * Description du Gobelin
+     * @return la liste des caractéristiques du Gobelin
      */
-    @Override
+    @Override //pris en compte en priorité
     public String toString() {
-        return "Ennemis{" +
-                this.toString() +
-                '}';
+        return " Type = " + type +
+                " -> Niveau de vie = " + vie +
+                " / Puissance d'attaque = " + puissance
+                ;
     }
 
 }

@@ -9,17 +9,17 @@ import java.util.Map;
 
 public class Plateau {
 
-    LinkedHashMap<Integer, OptionCase> mapPlateau = new LinkedHashMap<>();
+    LinkedHashMap<Integer, Case> mapPlateau = new LinkedHashMap<>();
 
-    public void creatPlateau() {
+    public void createPlateau() {
         for (int i = 0; i < 64; i++) {
-            mapPlateau.put(i, OptionCase.vide);
+            mapPlateau.put(i, OptionCase.generateCase());
         }
 
     }
 
     public void affichePlateau() {
-        for (Map.Entry<Integer,OptionCase> entry : mapPlateau.entrySet()) {
+        for (Map.Entry<Integer,Case> entry : mapPlateau.entrySet()) {
             System.out.println("Case n°"+ entry.getKey() + " -> " + entry.getValue());
         }
     }
